@@ -1,26 +1,39 @@
 import { NextPage } from "next";
-import { useState } from "react";
+import { Children, useState } from "react";
 
 const Where: NextPage = () => {
   const [items, setItems] = useState<string[]>([]);
   const [newItem, setNewItem] = useState<string>("");
 
   return (
-    <div className="container text-center">
+    <div className="container text-center mx-auto">
       test
       <div className="flex flex-col">
-        <ul>
+        <ul className="mx-auto my-4">
           {items &&
             items.map((item, index) => {
               return (
                 <li
                   key={index}
-                  className="flex"
+                  className="flex items-center gap-4"
                   onClick={() => setItems([...items.filter((f) => f !== item)])}
                 >
-                  <p className="text-xl font-bold text-center mx-auto">
-                    {item}
-                  </p>
+                  <p className="text-xl font-bold text-center ">{item}</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    className="ml-auto"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
                   {/* <p className="mr-auto">f</p> */}
                 </li>
               );
@@ -51,13 +64,26 @@ const Where: NextPage = () => {
         <div className="w-1/2 border-2 rounded-lg border-white flex flex-col my-auto h-1/2 mx-auto">
           <div className="grow">f</div>
           <div className="flex ml-auto p-4 border-2 rounded-l-lg">as</div>
-          <div id="back wall" className="flex border-2">
+          <div
+            id="back wall"
+            className={`${
+              items?.includes("back wall") && `border-red-500`
+            } flex border-2`}
+          >
             <div className="flex grow">f</div>
             <div className="w-1/3 flex">f</div>
           </div>
         </div>
       </div>
     </div>
+  );
+};
+
+const ShelfWrapper = ({ Children }): JSX.Element => {
+  return (
+    <>
+      <Children />
+    </>
   );
 };
 
