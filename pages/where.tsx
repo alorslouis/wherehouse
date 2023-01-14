@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import { Children, useState } from "react";
+import { createPortal } from "react-dom";
 
 const Where: NextPage = () => {
   const [items, setItems] = useState<number[]>([]);
@@ -86,11 +87,29 @@ const Where: NextPage = () => {
           <div id="2-1" className="flex h-6">
             <div className="flex w-1/3">daniel</div>
             <div className="flex grow">
-              <div className="flex grow border-2">
+              <div id="2-1-1" className="flex grow border-2">
                 <ShelfWrapper room={1} row={1} shelf={1} items={items} />
               </div>
               <div className="flex grow border-2"></div>
             </div>
+          </div>
+        </div>
+      </div>
+      {/*  */}
+      <input type="checkbox" id="my-modal-5" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box w-11/12 max-w-5xl">
+          <h3 className="font-bold text-lg">
+            Congratulations random Internet user!
+          </h3>
+          <p className="py-4">
+            You've been selected for a chance to get one year of subscription to
+            use Wikipedia for free!
+          </p>
+          <div className="modal-action">
+            <label htmlFor="my-modal-5" className="btn">
+              Yay!
+            </label>
           </div>
         </div>
       </div>
@@ -115,13 +134,18 @@ const ShelfWrapper = ({
   const [shelfItems, setShelfItems] = useState([...ff[0].items].flat());
   return (
     <>
+      {/* <label htmlFor="my-modal-5" className="btn" onClick={() => alert("ff")}> */}
       {shelfItems.map((item, index) => {
-        return (
-          <div className="flex-grow border-2" key={index}>
-            {item}
-          </div>
-        );
+        if (items.includes(item)) {
+          return (
+            <div className="flex-grow my-auto text-xs text-red-400" key={index}>
+              {item}
+              <PortalExample />
+            </div>
+          );
+        }
       })}
+      {/* </label> */}
     </>
   );
 };
@@ -134,7 +158,7 @@ const ShelvesContent = [
     shelf: 1,
     items: [
       [1230, 1440, 8230, 1211],
-      [1230, 1440, 8230, 1211],
+      [1232, 1440, 8230, 1211],
     ],
   },
   {
@@ -147,5 +171,30 @@ const ShelvesContent = [
     ],
   },
 ];
+
+function PortalExample() {
+  const [showModal, setShowModal] = useState(false);
+  return (
+    <>
+      <button onClick={() => setShowModal(true)}>
+        Show modal using a portal
+      </button>
+      {showModal &&
+        createPortal(
+          <ModalContent onClose={() => setShowModal(false)} />,
+          document.body
+        )}
+    </>
+  );
+}
+
+function ModalContent({ onClose }: { onClose: any }) {
+  return (
+    <div className="modal">
+      <div>I'm a modal dialog</div>
+      <button onClick={onClose}>Close</button>
+    </div>
+  );
+}
 
 export default Where;
