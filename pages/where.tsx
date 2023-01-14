@@ -5,6 +5,8 @@ const Where: NextPage = () => {
   const [items, setItems] = useState<number[]>([]);
   const [newItem, setNewItem] = useState<string>("");
 
+  const [activeShelf, setActiveShelf] = useState<number[]>([2, 3, 2]);
+
   return (
     <div className="container text-center mx-auto">
       test
@@ -49,19 +51,21 @@ const Where: NextPage = () => {
         />
         <button
           onClick={() => {
-            setItems([...items, Number.parseInt(newItem)]);
-            setNewItem("");
+            if (Number.parseInt(newItem)) {
+              setItems([...items, Number.parseInt(newItem)]);
+              setNewItem("");
+            }
           }}
         >
           add
         </button>
       </div>
       {/* room display */}
-      <div className="w-4/5 border-2 rounded-lg border-white flex flex-col grow h-screen mx-auto">
-        <h3>room1</h3>
-        <div className="w-1/2 border-2 rounded-lg border-white flex flex-col my-auto h-1/2 mx-auto"></div>
-        <h3>room2</h3>
-        <div className="w-1/2 border-2 rounded-lg border-white flex flex-col my-auto h-1/2 mx-auto">
+      <div className="w-4/5 border-2 rounded-lg border-white flex flex-col md:flex-row gap-8 p-4 grow h-screen mx-auto">
+        {/* <h3>room1</h3> */}
+        <div className="md:w-1/2 w-full border-2 rounded-lg border-white flex flex-col my-auto h-1/2 mx-auto"></div>
+        {/* <h3>room2</h3> */}
+        <div className="md:w-1/2 w-full border-2 rounded-lg border-white flex flex-col my-auto h-1/2 mx-auto">
           <div id="2-5" className="flex grow justify-between">
             <div>f</div>
             <div>f</div>
@@ -109,22 +113,41 @@ const ShelfWrapper = ({
   const [activeItems, setActiveItems] = useState([...ff[0].items]);
   return (
     <>
-      {activeItems.map((item, index) => {
-        if (items?.includes(item)) {
-          return (
-            <div key={index} className={`flex mx-2 text-xs`}>
-              {item}
-            </div>
-          );
-        }
+      {[...activeItems].map((item, index) => {
+        item.map((f) => {
+          if ([...items]?.includes(f)) {
+            return (
+              <div key={index} className={`flex mx-2 text-xs`}>
+                {item}
+              </div>
+            );
+          }
+        });
       })}
     </>
   );
 };
 
+// rows read l-r, shelves read b-t
 const ShelvesContent = [
-  { room: 1, row: 1, shelf: 1, items: [1230, 1440, 8230, 1211] },
-  { room: 2, row: 3, shelf: 2, items: [1230, 1440, 8230, 1211] },
+  {
+    room: 1,
+    row: 1,
+    shelf: 1,
+    items: [
+      [1230, 1440, 8230, 1211],
+      [1230, 1440, 8230, 1211],
+    ],
+  },
+  {
+    room: 2,
+    row: 3,
+    shelf: 2,
+    items: [
+      [1230, 1440, 8230, 1211],
+      [1230, 1440, 8230, 1211],
+    ],
+  },
 ];
 
 export default Where;
