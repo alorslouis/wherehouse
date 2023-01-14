@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import { Children, useState } from "react";
 
 const Where: NextPage = () => {
-  const [items, setItems] = useState<string[]>([]);
+  const [items, setItems] = useState<number[]>([]);
   const [newItem, setNewItem] = useState<string>("");
 
   return (
@@ -49,7 +49,7 @@ const Where: NextPage = () => {
         />
         <button
           onClick={() => {
-            setItems([...items, newItem]);
+            setItems([...items, Number.parseInt(newItem)]);
             setNewItem("");
           }}
         >
@@ -62,18 +62,29 @@ const Where: NextPage = () => {
         <div className="w-1/2 border-2 rounded-lg border-white flex flex-col my-auto h-1/2 mx-auto"></div>
         <h3>room2</h3>
         <div className="w-1/2 border-2 rounded-lg border-white flex flex-col my-auto h-1/2 mx-auto">
+          <div id="2-5" className="flex grow justify-between">
+            <div>f</div>
+            <div>f</div>
+          </div>
+
           <div className="grow">f</div>
-          <div className="flex ml-auto p-4 border-2 rounded-l-lg">as</div>
-          <div
-            id="back wall"
-            className={`${
-              items?.includes("back wall") && `border-red-500`
-            } flex border-2`}
-          >
+
+          <div id="2-3" className="flex">
+            <div className="flex w-1/2">lew</div>
+            <div className="flex ml-auto p-4 border-2 rounded-l-lg">as</div>
+          </div>
+
+          <div id="2-2" className="flex">
+            <div className="flex w-1/2"> </div>
+            <div className="flex ml-auto p-4 border-2 rounded-l-lg">as</div>
+          </div>
+
+          <div id="2-1" className="flex h-6">
+            <div className="flex w-1/3">daniel</div>
             <div className="flex grow">
-              <ShelfWrapper room={1} row={1} shelf={1} />
+              <div className="flex grow border-2"></div>
+              <div className="flex grow border-2"></div>
             </div>
-            <div className="w-1/3 flex">f</div>
           </div>
         </div>
       </div>
@@ -90,18 +101,18 @@ const ShelfWrapper = ({
   room: number;
   row: number;
   shelf: number;
-  items: string[];
+  items: number[];
 }) => {
-  const ff = ShelvesContent.find(
+  const ff = ShelvesContent.filter(
     (e) => e.room === room && e.row === row && e.shelf === shelf
   );
-  const [activeItems, setActiveItems] = useState([...ff?.items]);
+  const [activeItems, setActiveItems] = useState([...ff[0].items]);
   return (
     <>
       {activeItems.map((item, index) => {
-        if (items.includes(item?.toString())) {
+        if (items?.includes(item)) {
           return (
-            <div key={index} className={`flex mx-2`}>
+            <div key={index} className={`flex mx-2 text-xs`}>
               {item}
             </div>
           );
