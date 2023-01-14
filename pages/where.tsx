@@ -86,7 +86,9 @@ const Where: NextPage = () => {
           <div id="2-1" className="flex h-6">
             <div className="flex w-1/3">daniel</div>
             <div className="flex grow">
-              <div className="flex grow border-2"></div>
+              <div className="flex grow border-2">
+                <ShelfWrapper room={1} row={1} shelf={1} items={items} />
+              </div>
               <div className="flex grow border-2"></div>
             </div>
           </div>
@@ -113,15 +115,9 @@ const ShelfWrapper = ({
   const [activeItems, setActiveItems] = useState([...ff[0].items]);
   return (
     <>
-      {[...activeItems].map((item, index) => {
-        item.map((f) => {
-          if ([...items]?.includes(f)) {
-            return (
-              <div key={index} className={`flex mx-2 text-xs`}>
-                {item}
-              </div>
-            );
-          }
+      {activeItems.map((item, index) => {
+        item.map((r) => {
+          return <div>{r}</div>;
         });
       })}
     </>
