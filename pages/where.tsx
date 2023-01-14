@@ -87,18 +87,30 @@ const Where: NextPage = () => {
           <div id="2-1" className="flex h-6">
             <div className="flex w-1/3">daniel</div>
             <div className="flex grow">
-              <div id="2-1-1" className="flex grow border-2">
+              <div id="2-1-1" className="flex w-1/2 border-2">
                 <ShelfWrapper room={1} row={1} shelf={1} items={items} />
               </div>
-              <div className="flex grow border-2"></div>
+              <div className="flex w-1/2 border-2"></div>
             </div>
           </div>
         </div>
       </div>
       {/*  */}
       <input type="checkbox" id="my-modal-5" className="modal-toggle" />
-      <div className="modal">
-        <div className="modal-box w-11/12 max-w-5xl">
+      <div className="modal h-screen">
+        <div className="modal-box w-11/12 max-w-5xl h-screen flex flex-col">
+          <h3 className="text-xl my-4">shelf: 1 room: 1 </h3>
+          <div className="flex flex-col grow border-2 justify-evenly  rounded-lg">
+            {ShelvesContent[0].items.map((item, index) => {
+              return (
+                <div className="flex justify-evenly border-2 grow items-center">
+                  {item.map((f) => {
+                    return <div>{f}</div>;
+                  })}
+                </div>
+              );
+            })}
+          </div>
           <h3 className="font-bold text-lg">
             Congratulations random Internet user!
           </h3>
@@ -108,7 +120,7 @@ const Where: NextPage = () => {
           </p>
           <div className="modal-action">
             <label htmlFor="my-modal-5" className="btn">
-              Yay!
+              Done
             </label>
           </div>
         </div>
@@ -134,18 +146,25 @@ const ShelfWrapper = ({
   const [shelfItems, setShelfItems] = useState([...ff[0].items].flat());
   return (
     <>
-      {/* <label htmlFor="my-modal-5" className="btn" onClick={() => alert("ff")}> */}
-      {shelfItems.map((item, index) => {
-        if (items.includes(item)) {
-          return (
-            <div className="flex-grow my-auto text-xs text-red-400" key={index}>
-              {item}
-              <PortalExample />
-            </div>
-          );
-        }
-      })}
-      {/* </label> */}
+      <label
+        htmlFor="my-modal-5"
+        className="flex gap-1 grow flex-wrap"
+        // onClick={() => alert("ff")}
+      >
+        {shelfItems.map((item, index) => {
+          if (items.includes(item)) {
+            return (
+              <div
+                className="flex-grow my-auto text-xs cursor-pointer text-red-400"
+                key={index}
+              >
+                {item}
+                {/* <PortalExample /> */}
+              </div>
+            );
+          }
+        })}
+      </label>
     </>
   );
 };
