@@ -112,13 +112,15 @@ const ShelfWrapper = ({
   const ff = ShelvesContent.filter(
     (e) => e.room === room && e.row === row && e.shelf === shelf
   );
-  const [activeItems, setActiveItems] = useState([...ff[0].items]);
+  const [shelfItems, setShelfItems] = useState([...ff[0].items].flat());
   return (
     <>
-      {activeItems.map((item, index) => {
-        item.map((r) => {
-          return <div>{r}</div>;
-        });
+      {shelfItems.map((item, index) => {
+        return (
+          <div className="flex-grow border-2" key={index}>
+            {item}
+          </div>
+        );
       })}
     </>
   );
