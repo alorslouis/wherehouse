@@ -70,7 +70,9 @@ const Where: NextPage = () => {
               items?.includes("back wall") && `border-red-500`
             } flex border-2`}
           >
-            <div className="flex grow">f</div>
+            <div className="flex grow">
+              <ShelfWrapper room={1} row={1} shelf={1} />
+            </div>
             <div className="w-1/3 flex">f</div>
           </div>
         </div>
@@ -79,12 +81,39 @@ const Where: NextPage = () => {
   );
 };
 
-const ShelfWrapper = ({ Children }): JSX.Element => {
+const ShelfWrapper = ({
+  room,
+  row,
+  shelf,
+  items,
+}: {
+  room: number;
+  row: number;
+  shelf: number;
+  items: string[];
+}) => {
+  const ff = ShelvesContent.find(
+    (e) => e.room === room && e.row === row && e.shelf === shelf
+  );
+  const [activeItems, setActiveItems] = useState([...ff?.items]);
   return (
     <>
-      <Children />
+      {activeItems.map((item, index) => {
+        if (items.includes(item?.toString())) {
+          return (
+            <div key={index} className={`flex mx-2`}>
+              {item}
+            </div>
+          );
+        }
+      })}
     </>
   );
 };
+
+const ShelvesContent = [
+  { room: 1, row: 1, shelf: 1, items: [1230, 1440, 8230, 1211] },
+  { room: 2, row: 3, shelf: 2, items: [1230, 1440, 8230, 1211] },
+];
 
 export default Where;
