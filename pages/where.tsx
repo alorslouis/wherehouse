@@ -16,27 +16,29 @@ const Where: NextPage = () => {
           {items &&
             items.map((item, index) => {
               return (
-                <li
-                  key={index}
-                  className="flex items-center gap-4"
-                  onClick={() => setItems([...items.filter((f) => f !== item)])}
-                >
+                <li key={index} className="flex items-center gap-4">
                   <p className="text-xl font-bold text-center ">{item}</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="ml-auto"
+                  <button
+                    onClick={() =>
+                      setItems([...items.filter((f) => f !== item)])
+                    }
                   >
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="ml-auto"
+                    >
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                  </button>
                   {/* <p className="mr-auto">f</p> */}
                 </li>
               );
@@ -80,7 +82,7 @@ const Where: NextPage = () => {
           </div>
 
           <div id="2-2" className="flex">
-            <div className="flex w-1/2"> </div>
+            <div className="flex w-1/2">HQ</div>
             <div className="flex ml-auto p-4 border-2 rounded-l-lg">as</div>
           </div>
 
@@ -146,14 +148,14 @@ const ShelfWrapper = ({
   const [shelfItems, setShelfItems] = useState([...ff[0].items].flat());
   return (
     <>
-      <label
-        htmlFor="my-modal-5"
-        className="flex gap-1 grow flex-wrap"
-        // onClick={() => alert("ff")}
-      >
-        {shelfItems.map((item, index) => {
-          if (items.includes(item)) {
-            return (
+      {shelfItems.map((item, index) => {
+        if (items.includes(item)) {
+          return (
+            <label
+              htmlFor="my-modal-5"
+              className="flex gap-1 grow flex-wrap"
+              // onClick={() => alert("ff")}
+            >
               <div
                 className="flex-grow my-auto text-xs cursor-pointer text-red-400"
                 key={index}
@@ -161,10 +163,10 @@ const ShelfWrapper = ({
                 {item}
                 {/* <PortalExample /> */}
               </div>
-            );
-          }
-        })}
-      </label>
+            </label>
+          );
+        }
+      })}
     </>
   );
 };
