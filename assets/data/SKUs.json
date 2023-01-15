@@ -1,82 +1,234 @@
 [
   {
     "sku": "1205",
-    "name": "XSW Straps"
+    "name": "XSW Straps (Header)"
   },
   {
     "sku": "1626",
-    "name": "Aqua Shot"
+    "name": "Aqua Shot (Header)"
   },
   {
     "sku": "1725",
-    "name": "Gorilla XT Cage"
+    "name": "Gorilla XT Cage (Header)"
   },
   {
     "sku": "1748",
-    "name": "Super Wing"
+    "name": "Super Wing (Header)"
   },
   {
     "sku": "1757",
-    "name": "Turbo Wing"
+    "name": "Turbo Wing (Header)"
   },
   {
     "sku": "1772",
-    "name": "Gorilla Cage"
+    "name": "Gorilla Cage (Header)"
   },
   {
     "sku": "1857",
-    "name": "Mezzo Bag"
+    "name": "Mezzo Bag (Header)"
   },
   {
     "sku": "1859",
-    "name": "Mini Bag"
+    "name": "Mini Bag (Header)"
   },
   {
     "sku": "1862",
-    "name": "Rocket Pocket"
+    "name": "Rocket Pocket (Header)"
   },
   {
     "sku": "1863",
-    "name": "Rocket Pocket XL"
+    "name": "Rocket Pocket XL (Header)"
   },
   {
     "sku": "2278",
-    "name": "Multistrike"
+    "name": "Multistrike (Header)"
   },
   {
     "sku": "2296",
-    "name": "Delta 400"
+    "name": "Delta 400 (Header)"
   },
   {
     "sku": "2323",
-    "name": "Aero Pouch 300"
+    "name": "Aero Pouch 300 (Header)"
   },
   {
     "sku": "2358",
-    "name": "Delta 425"
+    "name": "Delta 425 (Header)"
   },
   {
     "sku": "2395",
-    "name": "Gear Box"
+    "name": "Gear Box (Header)"
+  },
+  {
+    "sku": "2512",
+    "name": "Stealth Pocket 400 XP (Header)"
   },
   {
     "sku": "2514",
-    "name": "Stealth Pocket 200 XP"
+    "name": "Stealth Pocket 200 XP (Header)"
   },
   {
     "sku": "2518",
-    "name": "Versa Mount Carbon"
+    "name": "Versa Mount Carbon (Header)"
   },
   {
     "sku": "2521",
-    "name": "Versa Computer Mount"
+    "name": "Versa Computer Mount (Header)"
   },
   {
     "sku": "2544",
-    "name": "Versa Mount Aluminum"
+    "name": "Versa Mount Aluminum (Header)"
   },
   {
     "sku": "2601",
-    "name": "Reload Kit"
+    "name": "Reload Kit (Header)"
+  },
+  {
+    "sku": "2734",
+    "name": "Mini Wing 105 (Header)"
+  },
+  {
+    "sku": "2738",
+    "name": "Rocket Pocket XL Plus (Header)"
+  },
+  {
+    "sku": "2795",
+    "name": "C-Fast (Header)"
+  },
+  {
+    "sku": "2834",
+    "name": "Hydroblade Universal Mount (Header)"
+  },
+  {
+    "sku": "2904",
+    "name": "Delta 430 (Header)"
+  },
+  {
+    "sku": "2953",
+    "name": "C-Fast w/GoPro (Header)"
+  },
+  {
+    "sku": "3067",
+    "name": "Delta 200 XT (Header)"
+  },
+  {
+    "sku": "3068",
+    "name": "Delta 400 XT (Header)"
+  },
+  {
+    "sku": "3076",
+    "name": "K125 Lite (Header)"
+  },
+  {
+    "sku": "1758",
+    "name": "Nanoflator (Header)"
+  },
+  {
+    "sku": "1759",
+    "name": "Speedchuck (Header)"
+  },
+  {
+    "sku": "1761",
+    "name": "Torpedo Cage (Header)"
+  },
+  {
+    "sku": "1762",
+    "name": "Aero TT System (Header)"
+  },
+  {
+    "sku": "1765",
+    "name": "Sidekick (Header)"
+  },
+  {
+    "sku": "1771",
+    "name": "Delta 200 (Header)"
+  },
+  {
+    "sku": "1865",
+    "name": "Stealth Pocket 100 (Header)"
+  },
+  {
+    "sku": "1973",
+    "name": "Mini Cage Pod (Header)"
+  },
+  {
+    "sku": "1976",
+    "name": "Tire Mate (Header)"
+  },
+  {
+    "sku": "2001",
+    "name": "Mezzo Cage Pod (Header)"
+  },
+  {
+    "sku": "2236",
+    "name": "Tri Tool (Header)"
+  },
+  {
+    "sku": "2397",
+    "name": "Refresh Kit (Header)"
+  },
+  {
+    "sku": "2404",
+    "name": "Cool Shot (Header)"
+  },
+  {
+    "sku": "2479",
+    "name": "Stealth Pocket 100 C (Header)"
+  },
+  {
+    "sku": "2481",
+    "name": "Stealth Pocket 400 C (Header)"
+  },
+  {
+    "sku": "2484",
+    "name": "Stealth Pocket 500 C (Header)"
+  },
+  {
+    "sku": "2484",
+    "name": "Stealth Pocket 500 C (Header)"
+  },
+  {
+    "sku": "2621",
+    "name": "Raptor Cage (Header)"
+  },
+  {
+    "sku": "2622",
+    "name": "Vulcan Cage (Header)"
+  },
+  {
+    "sku": "2671",
+    "name": "Duo Pod (Header)"
+  },
+  {
+    "sku": "2679",
+    "name": "Torpedo System 50+ (Header)"
+  },
+  {
+    "sku": "2726",
+    "name": "Delta 105 (Header)"
+  },
+  {
+    "sku": "2972",
+    "name": "Kompact 500 Integrated (Header)"
+  },
+  {
+    "sku": "2983",
+    "name": "Hydro Road (Header)"
+  },
+  {
+    "sku": "3016",
+    "name": "Hydroblade Tri Edition (Header)"
+  },
+  {
+    "sku": "3062",
+    "name": "Vee Cage (Header)"
+  },
+  {
+    "sku": "3065",
+    "name": "Xenon Cage (Header)"
+  },
+  {
+    "sku": "3066",
+    "name": "Turbo Wing System (Header)"
   }
 ]
