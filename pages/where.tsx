@@ -3,22 +3,22 @@ import { Children, useState } from "react";
 import { createPortal } from "react-dom";
 
 const Where: NextPage = () => {
-  const [items, setItems] = useState<number[]>([]);
+  const [items, setItems] = useState<string[]>([]);
   const [newItem, setNewItem] = useState<string>("");
 
   const [activeShelf, setActiveShelf] = useState<number[]>([2, 3, 2]);
 
   return (
     <div className="container text-center mx-auto">
-      test
       <div className="flex flex-col">
-        <ul className="mx-auto my-4">
+        <ul className="mx-auto flex gap-4 my-4">
           {items &&
             items.map((item, index) => {
               return (
                 <li key={index} className="flex items-center gap-4">
                   <p className="text-xl font-bold text-center ">{item}</p>
                   <button
+                    className="ml-auto"
                     onClick={() =>
                       setItems([...items.filter((f) => f !== item)])
                     }
@@ -54,13 +54,13 @@ const Where: NextPage = () => {
         />
         <button
           onClick={() => {
-            if (Number.parseInt(newItem)) {
-              setItems([...items, Number.parseInt(newItem)]);
+            if (newItem) {
+              setItems([...items, newItem]);
               setNewItem("");
             }
           }}
         >
-          add
+          +
         </button>
       </div>
       {/* room display */}
@@ -107,7 +107,11 @@ const Where: NextPage = () => {
               return (
                 <div className="flex justify-evenly border-2 grow items-center">
                   {item.map((f) => {
-                    return <div>{f}</div>;
+                    return (
+                      <div className={`${items.includes(f) && "text-red-500"}`}>
+                        {f}
+                      </div>
+                    );
                   })}
                 </div>
               );
@@ -140,7 +144,7 @@ const ShelfWrapper = ({
   room: number;
   row: number;
   shelf: number;
-  items: number[];
+  items: string[];
 }) => {
   const ff = ShelvesContent.filter(
     (e) => e.room === room && e.row === row && e.shelf === shelf
@@ -177,19 +181,7 @@ const ShelvesContent = [
     room: 1,
     row: 1,
     shelf: 1,
-    items: [
-      [1230, 1440, 8230, 1211],
-      [1232, 1440, 8230, 1211],
-    ],
-  },
-  {
-    room: 2,
-    row: 3,
-    shelf: 2,
-    items: [
-      [1230, 1440, 8230, 1211],
-      [1230, 1440, 8230, 1211],
-    ],
+    items: [["1230", "1440", "8230", "1211"]],
   },
 ];
 
