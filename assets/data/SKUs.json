@@ -1,6 +1,82 @@
 [
   {
-    "sku": "1549",
-    "name": "Bread"
+    "sku": "1205",
+    "name": "XSW Straps"
+  },
+  {
+    "sku": "1626",
+    "name": "Aqua Shot"
+  },
+  {
+    "sku": "1725",
+    "name": "Gorilla XT Cage"
+  },
+  {
+    "sku": "1748",
+    "name": "Super Wing"
+  },
+  {
+    "sku": "1757",
+    "name": "Turbo Wing"
+  },
+  {
+    "sku": "1772",
+    "name": "Gorilla Cage"
+  },
+  {
+    "sku": "1857",
+    "name": "Mezzo Bag"
+  },
+  {
+    "sku": "1859",
+    "name": "Mini Bag"
+  },
+  {
+    "sku": "1862",
+    "name": "Rocket Pocket"
+  },
+  {
+    "sku": "1863",
+    "name": "Rocket Pocket XL"
+  },
+  {
+    "sku": "2278",
+    "name": "Multistrike"
+  },
+  {
+    "sku": "2296",
+    "name": "Delta 400"
+  },
+  {
+    "sku": "2323",
+    "name": "Aero Pouch 300"
+  },
+  {
+    "sku": "2358",
+    "name": "Delta 425"
+  },
+  {
+    "sku": "2395",
+    "name": "Gear Box"
+  },
+  {
+    "sku": "2514",
+    "name": "Stealth Pocket 200 XP"
+  },
+  {
+    "sku": "2518",
+    "name": "Versa Mount Carbon"
+  },
+  {
+    "sku": "2521",
+    "name": "Versa Computer Mount"
+  },
+  {
+    "sku": "2544",
+    "name": "Versa Mount Aluminum"
+  },
+  {
+    "sku": "2601",
+    "name": "Reload Kit"
   }
 ]
