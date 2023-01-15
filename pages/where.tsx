@@ -11,7 +11,7 @@ const Where: NextPage = () => {
   return (
     <div className="container text-center mx-auto">
       <div className="flex flex-col">
-        <ul className="mx-auto flex gap-4 my-4">
+        <ul className="mx-auto flex flex-wrap justify-center gap-4 my-4">
           {items &&
             items.map((item, index) => {
               return (
@@ -23,7 +23,7 @@ const Where: NextPage = () => {
                       setItems([...items.filter((f) => f !== item)])
                     }
                   >
-                    <svg
+                    {/* <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -37,7 +37,8 @@ const Where: NextPage = () => {
                     >
                       <line x1="18" y1="6" x2="6" y2="18"></line>
                       <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
+                    </svg> */}
+                    –
                   </button>
                   {/* <p className="mr-auto">f</p> */}
                 </li>
@@ -90,7 +91,7 @@ const Where: NextPage = () => {
             <div className="flex w-1/3">daniel</div>
             <div className="flex grow">
               <div id="2-1-1" className="flex w-1/2 border-2">
-                <ShelfWrapper room={1} row={1} shelf={1} items={items} />
+                <ShelfWrapper room={1} row={1} shelf={2} items={items} />
               </div>
               <div className="flex w-1/2 border-2"></div>
             </div>
@@ -180,8 +181,12 @@ const ShelvesContent = [
   {
     room: 1,
     row: 1,
-    shelf: 1,
-    items: [["1230", "1440", "8230", "1211"]],
+    shelf: 2,
+    items: [
+      ["2278", "2296", "2323", "2358", "2395"],
+      ["1772", "1857", "1859", "1862", "1863"],
+      ["1205", "1626", "1725", "1748", "1757"],
+    ],
   },
 ];
 
