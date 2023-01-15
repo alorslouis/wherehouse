@@ -78,20 +78,28 @@ const Where: NextPage = () => {
           <div className="grow">f</div>
 
           <div id="2-3" className="flex">
-            <div className="flex w-1/2">lew</div>
-            <div className="flex ml-auto p-4 border-2 rounded-l-lg">as</div>
+            <div className="flex w-1/3">lew</div>
+            <div className="flex grow mx-auto">
+              <div className="flex mx-auto p-4 border-2 rounded-t-lg"></div>
+              <div className="flex mx-auto p-4 border-2 rounded-t-lg"></div>
+            </div>
+            <div className="flex ml-auto p-4 border-2 rounded-l-lg"></div>
           </div>
 
-          <div id="2-2" className="flex">
-            <div className="flex w-1/2">HQ</div>
-            <div className="flex ml-auto p-4 border-2 rounded-l-lg">as</div>
+          <div id="2-2" className="flex mb-4">
+            <div className="flex w-1/3">HQ</div>
+            <div className="flex grow mx-auto">
+              <div className="flex mx-auto p-4 border-2 rounded-b-lg"></div>
+              <div className="flex mx-auto p-4 border-2 rounded-b-lg"></div>
+            </div>
+            <div className="flex ml-auto p-4 border-2 rounded-l-lg"></div>
           </div>
 
           <div id="2-1" className="flex h-6">
             <div className="flex w-1/3">daniel</div>
             <div className="flex grow">
               <div id="2-1-1" className="flex w-1/2 border-2">
-                <ShelfWrapper room={1} row={1} shelf={2} items={items} />
+                <ShelfWrapper room={1} row={1} shelf={1} items={items} />
               </div>
               <div className="flex w-1/2 border-2">
                 <ShelfWrapper room={1} row={1} shelf={2} items={items} />
@@ -161,7 +169,7 @@ const ShelfWrapper = ({
             <label
               htmlFor="my-modal-5"
               className="flex gap-1 grow flex-wrap"
-              // onClick={() => alert("ff")}
+              // onClick={() => set}
             >
               <div
                 className="flex-grow my-auto text-xs cursor-pointer text-red-400"
@@ -203,6 +211,16 @@ const ShelvesContent = [
       ["2512", "2514", "2518", "2521", "2544", "2601"],
       ["2734", "2738", "2795", "2834", "2904", "2953"],
       ["3067", "3068", "3076"],
+    ],
+  },
+  {
+    room: 1,
+    row: 2,
+    shelf: 1,
+    items: [
+      ["1081", "1090", "1091", "1266", "1329", "1330", "1349", "1375"],
+      ["1470", "1471", "1485", "1486", "1533", "1673", "1712", "1720"],
+      ["1934", "2035", "2119", "2250", "2260", "2325", "2336", "2367", "2382"],
     ],
   },
 ];
