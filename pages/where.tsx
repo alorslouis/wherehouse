@@ -146,7 +146,9 @@ const Where: NextPage = () => {
                     return (
                       <div
                         key={f}
-                        className={`${items.includes(f) && "text-red-500"}`}
+                        className={`${
+                          items.includes(f) && "text-red-500"
+                        } text-xs`}
                       >
                         {f}
                       </div>
