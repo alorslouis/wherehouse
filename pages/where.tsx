@@ -8,6 +8,16 @@ const Where: NextPage = () => {
 
   const [activeShelf, setActiveShelf] = useState<number[]>([2, 3, 2]);
 
+  const activeShelfContents = ShelvesContent.find(
+    (e) =>
+      e.room === activeShelf[0] &&
+      e.row === activeShelf[1] &&
+      e.shelf === activeShelf[2]
+  );
+
+  console.log(activeShelfContents);
+
+  console.log(activeShelf);
   return (
     <div className="container text-center mx-auto">
       <div className="flex flex-col">
@@ -89,7 +99,12 @@ const Where: NextPage = () => {
           <div id="2-2" className="flex mb-4">
             <div className="flex w-1/3">HQ</div>
             <div className="flex grow mx-auto">
-              <div className="flex mx-auto p-4 border-2 rounded-b-lg"></div>
+              <div
+                className="flex mx-auto w-1/6 p-4 border-2 rounded-b-lg"
+                onClick={() => setActiveShelf([1, 3, 1])}
+              >
+                <ShelfWrapper room={1} row={3} shelf={1} items={items} />
+              </div>
               <div className="flex mx-auto p-4 border-2 rounded-b-lg"></div>
             </div>
             <div className="flex ml-auto p-4 border-2 rounded-l-lg"></div>
@@ -98,10 +113,17 @@ const Where: NextPage = () => {
           <div id="2-1" className="flex h-6">
             <div className="flex w-1/3">daniel</div>
             <div className="flex grow">
-              <div id="2-1-1" className="flex w-1/2 border-2">
+              <div
+                id="2-1-1"
+                className="flex w-1/2 border-2"
+                onClick={() => setActiveShelf([1, 1, 1])}
+              >
                 <ShelfWrapper room={1} row={1} shelf={1} items={items} />
               </div>
-              <div className="flex w-1/2 border-2">
+              <div
+                className="flex w-1/2 border-2"
+                onClick={() => setActiveShelf([1, 1, 2])}
+              >
                 <ShelfWrapper room={1} row={1} shelf={2} items={items} />
               </div>
             </div>
@@ -114,7 +136,7 @@ const Where: NextPage = () => {
         <div className="modal-box w-11/12 max-w-5xl h-screen flex flex-col">
           <h3 className="text-xl my-4">shelf: 1 room: 1 </h3>
           <div className="flex flex-col grow border-2 justify-evenly  rounded-lg">
-            {ShelvesContent[0].items.map((item, index) => {
+            {activeShelfContents?.items.map((item, index) => {
               return (
                 <div className="flex justify-evenly border-2 grow items-center">
                   {item.map((f) => {
@@ -129,11 +151,12 @@ const Where: NextPage = () => {
             })}
           </div>
           <h3 className="font-bold text-lg">
-            Congratulations random Internet user!
+            {activeShelf}
+            {/* Congratulations random Internet user! */}
           </h3>
           <p className="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
+            {/* You've been selected for a chance to get one year of subscription to
+            use Wikipedia for free! */}
           </p>
           <div className="modal-action">
             <label htmlFor="my-modal-5" className="btn">
@@ -161,14 +184,16 @@ const ShelfWrapper = ({
     (e) => e.room === room && e.row === row && e.shelf === shelf
   );
   const [shelfItems, setShelfItems] = useState([...ff[0].items].flat());
+
+  const includedItems = shelfItems.filter((e) => items.includes(e));
   return (
     <>
-      {shelfItems.map((item, index) => {
-        if (items.includes(item)) {
+      {includedItems.length <= 1 ? (
+        includedItems.map((item, index) => {
           return (
             <label
               htmlFor="my-modal-5"
-              className="flex gap-1 grow flex-wrap"
+              className="flex items-center grow-0 flex-wrap"
               // onClick={() => set}
             >
               <div
@@ -180,8 +205,15 @@ const ShelfWrapper = ({
               </div>
             </label>
           );
-        }
-      })}
+        })
+      ) : (
+        <label
+          htmlFor="my-modal-5"
+          className="flex mx-2 gap-2 grow-0 flex-wrap text-xs cursor-pointer text-red-400"
+        >
+          ({includedItems.length})
+        </label>
+      )}
     </>
   );
 };
