@@ -134,7 +134,9 @@ const Where: NextPage = () => {
       <input type="checkbox" id="my-modal-5" className="modal-toggle" />
       <div className="modal h-screen">
         <div className="modal-box w-11/12 max-w-5xl h-screen flex flex-col">
-          <h3 className="text-xl my-4">shelf: 1 room: 1 </h3>
+          <h3 className="text-xl my-4">
+            row: {activeShelf[1]} shelf: {activeShelf[2]} room: {activeShelf[0]}{" "}
+          </h3>
           <div className="flex flex-col grow border-2 justify-evenly  rounded-lg">
             {activeShelfContents?.items.map((item, index) => {
               return (
@@ -159,7 +161,7 @@ const Where: NextPage = () => {
             })}
           </div>
           <h3 className="font-bold text-lg">
-            {activeShelf}
+            {/* {activeShelf} */}
             {/* Congratulations random Internet user! */}
           </h3>
           <p className="py-4">
@@ -202,7 +204,7 @@ const ShelfWrapper = ({
             <label
               htmlFor="my-modal-5"
               key={index}
-              className="flex items-center grow-0 flex-wrap"
+              className="flex mx-auto text-center items-center grow-0 flex-wrap"
               // onClick={() => set}
             >
               <div
@@ -218,7 +220,7 @@ const ShelfWrapper = ({
       ) : (
         <label
           htmlFor="my-modal-5"
-          className="flex mx-2 gap-2 grow-0 flex-wrap text-xs cursor-pointer text-red-400"
+          className="flex mx-auto gap-2 grow-0 flex-wrap text-xs cursor-pointer text-red-400"
         >
           ({includedItems.length})
         </label>
