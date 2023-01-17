@@ -138,10 +138,16 @@ const Where: NextPage = () => {
           <div className="flex flex-col grow border-2 justify-evenly  rounded-lg">
             {activeShelfContents?.items.map((item, index) => {
               return (
-                <div className="flex justify-evenly border-2 grow items-center">
+                <div
+                  key={index}
+                  className="flex justify-evenly border-2 grow items-center"
+                >
                   {item.map((f) => {
                     return (
-                      <div className={`${items.includes(f) && "text-red-500"}`}>
+                      <div
+                        key={f}
+                        className={`${items.includes(f) && "text-red-500"}`}
+                      >
                         {f}
                       </div>
                     );
@@ -193,6 +199,7 @@ const ShelfWrapper = ({
           return (
             <label
               htmlFor="my-modal-5"
+              key={index}
               className="flex items-center grow-0 flex-wrap"
               // onClick={() => set}
             >
@@ -285,29 +292,29 @@ const ShelvesContent = [
   },
 ];
 
-function PortalExample() {
-  const [showModal, setShowModal] = useState(false);
-  return (
-    <>
-      <button onClick={() => setShowModal(true)}>
-        Show modal using a portal
-      </button>
-      {showModal &&
-        createPortal(
-          <ModalContent onClose={() => setShowModal(false)} />,
-          document.body
-        )}
-    </>
-  );
-}
+// function PortalExample() {
+//   const [showModal, setShowModal] = useState(false);
+//   return (
+//     <>
+//       <button onClick={() => setShowModal(true)}>
+//         Show modal using a portal
+//       </button>
+//       {showModal &&
+//         createPortal(
+//           <ModalContent onClose={() => setShowModal(false)} />,
+//           document.body
+//         )}
+//     </>
+//   );
+// }
 
-function ModalContent({ onClose }: { onClose: any }) {
-  return (
-    <div className="modal">
-      <div>I'm a modal dialog</div>
-      <button onClick={onClose}>Close</button>
-    </div>
-  );
-}
+// function ModalContent({ onClose }: { onClose: any }) {
+//   return (
+//     <div className="modal">
+//       <div>Im a modal dialog</div>
+//       <button onClick={onClose}>Close</button>
+//     </div>
+//   );
+// }
 
 export default Where;
