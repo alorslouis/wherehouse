@@ -140,7 +140,7 @@ const Where: NextPage = () => {
               return (
                 <div
                   key={index}
-                  className="flex justify-evenly border-2 grow items-center"
+                  className="flex justify-evenly border-2 grow flex-wrap items-center"
                 >
                   {item.map((f) => {
                     return (
