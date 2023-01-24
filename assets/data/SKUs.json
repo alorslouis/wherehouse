@@ -462,5 +462,37 @@
   {
     "sku": "2443",
     "name": "Torpedo Bottle Attachment Spacer - Black"
+  },
+  {
+    "sku": "2294",
+    "name": "Delta 400 (pull)"
+  },
+  {
+    "sku": "2316",
+    "name": "Space Saver (pull)"
+  },
+  {
+    "sku": "2320",
+    "name": "Aero Pouch (pull)"
+  },
+  {
+    "sku": "2331",
+    "name": "null (pull)"
+  },
+  {
+    "sku": "2356",
+    "name": "Delta 425 (pull)"
+  },
+  {
+    "sku": "2377",
+    "name": "Raptor Cage (pull)"
+  },
+  {
+    "sku": "2390",
+    "name": "Gear Box (pull)"
+  },
+  {
+    "sku": "2396",
+    "name": "Torpedo Refresh (pull)"
   }
 ]
