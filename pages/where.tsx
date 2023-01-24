@@ -294,6 +294,15 @@ const ShelvesContent = [
       ],
     ],
   },
+  {
+    room: 2,
+    row: 1,
+    shelf: 2,
+    items: [
+      ["2294", "2316", "2320", "2331"],
+      ["2356", "2377", "2390", "2396"],
+    ],
+  },
 ];
 
 // function PortalExample() {
